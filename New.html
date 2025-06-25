@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Exploralas</title>
+  <style>
+    body {
+      background-image: url('https://th.bing.com/th/id/R.1d37be8608a206b73c9a0748ec5745a3?rik=O8vET2LPOwJSpA&pid=ImgRaw&r=0');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      font-family: 'Courier New', monospace;
+      color: white;
+    }
+
+    .imagenes-container {
+      width: 1245px; /* 3 imágenes visibles */
+      overflow: hidden;
+      margin: auto;
+    }
+
+    .imagenes {
+      display: flex;
+      gap: 15px;
+      margin-top: 20px;
+      transition: transform 0.5s linear;
+    }
+
+    .imagenes img {
+      width: 400px;
+      height: 300px;
+      opacity: 0.5;
+      transition: transform 0.5s, box-shadow 0.5s, opacity 0.5s;
+      cursor: pointer;
+      border-radius: 10px;
+      flex-shrink: 0;
+    }
+
+    .imagenes img:hover {
+      transform: scale(1.1);
+      box-shadow: 0 0 15px 5px #4caf50;
+      opacity: 1;
+    }
+
+    button {
+      font-weight: bold;
+      font-family: 'Courier New';
+    }
+
+@keyframes reboteInclinado {
+  0%   { transform: translateY(0) rotate(0deg); }
+  25%  { transform: translateY(-4px) rotate(-5deg); }
+  50%  { transform: translateY(0) rotate(5deg); }
+  75%  { transform: translateY(-4px) rotate(-5deg); }
+  100% { transform: translateY(0) rotate(0deg); }
+}
+
+button {
+  font-weight: bold;
+  font-family: 'Courier New';
+  animation: reboteInclinado 1.5s infinite;
+}
+
+
+  </style>
+</head>
+
+<body>
+
+  <p style="text-align: center; font-size: 24px; font-weight: bold;">¡EXPLÓRALAS!</p>
+
+  <table border="0" style="margin: auto;">
+    <tr>
+      <th><a href="pagina2.html"><button>E-GOVERNMENT</button></a></th>
+      <th><a href="pagina4.html"><button>E-LEARNING</button></a></th>
+      <th><a href="pagina5.html"><button>E-GAMING</button></a></th>
+      <th><a href="pagina6.html"><button>E-HEALTH</button></a></th>
+      <th><a href="pagina7.html"><button>E-JUSTICE</button></a></th>
+    </tr>
+  </table>
+
+  <div class="imagenes-container">
+    <div class="imagenes" id="carrusel">
+      <img src="https://th.bing.com/th/id/R.d5edbfe106ca3761e70c9ce6fa378904?rik=n7m5Tr76YU3erQ&riu=http%3a%2f%2fstatic1.squarespace.com%2fstatic%2f587fdc951b10e30ca5380172%2f58b32c2fff7c508925df2388%2f64a2f3c54ab3e957ba76b304%2f1688401221575%2fprofessional-esports-gamer-back-side-view-rejoices-victory-generative-ai.jpg%3fformat%3d1500w&ehk=wzAGH3EzzDRu0D5X0ALnJcyFl60EZQNGbXkats9ImKw%3d&risl=&pid=ImgRaw&r=0" alt="Imagen 1">
+      <img src="https://th.bing.com/th/id/OIP.qfXuPsKiweOqRyPJ-sCPLQHaE8?r=0&rs=1&pid=ImgDetMain&cb=idpwebpc2" alt="Imagen 2">
+      <img src="https://static.vecteezy.com/system/resources/previews/000/444/997/original/e-learning-icons-flat-vector.jpg" alt="Imagen 3">
+      <img src="https://thumbs.dreamstime.com/b/ehealth-concepto-de-texto-con-iconos-sociales-presionados-mano-sobre-fondo-mapa-del-mundo-azul-241698544.jpg" alt="Imagen 4">
+      <img src="https://wallpapers.com/images/hd/justice-scale-and-lady-justice-k7iegk4785mxrnj6.jpg" alt="Imagen 2">
+    </div>
+  </div>
+
+  <script>
+    const carrusel = document.getElementById('carrusel');
+    const imagenAncho = 415;
+    let desplazamiento = 0;
+
+    carrusel.innerHTML += carrusel.innerHTML;
+
+    function mover() {
+      desplazamiento += 1;
+      if (desplazamiento >= imagenAncho * (carrusel.children.length / 2)) {
+        desplazamiento = 0;
+      }
+      carrusel.style.transform = `translateX(-${desplazamiento}px)`;
+    }
+
+    setInterval(mover, 40);
+  </script>
+<br></br>
+HERNANDEZ PALMA LUIS CESAR 
+<br></br>
+LOPEZ RIZO ALEXIS 
+
+</body>
+</html>
